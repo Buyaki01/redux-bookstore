@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/Books';
 
 const BookItem = (props) => {
-  const { book: { title, author } } = props;
+  const { book: { id, title, author } } = props;
+  const dispatch = useDispatch();
+  const removeBookFromStore = () => {
+    dispatch(removeBook({ id }));
+  };
+
   return (
     <div className="bookItemContainer">
       <div className="booksSection">
@@ -20,7 +27,7 @@ const BookItem = (props) => {
         </h4>
         <div className="userBtn">
           <button type="button" className="commentsBtn">Comments</button>
-          <button type="button" className="removeBtn">Remove</button>
+          <button type="button" className="removeBtn" onClick={removeBookFromStore}>Remove</button>
           <button type="button" className="editBtn">Edit</button>
         </div>
       </div>
@@ -43,6 +50,7 @@ const BookItem = (props) => {
 
 BookItem.propTypes = {
   book: PropTypes.shape({
+    id: PropTypes.string,
     title: PropTypes.string,
     author: PropTypes.string,
   }).isRequired,

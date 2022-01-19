@@ -35,7 +35,7 @@ You should now have the project running locally on a dev server.
 - Run: npx eslint .
 - For css run: npx stylelint "**/*.{css,scss}"
 
-## Author 1
+## Author
 
 👤 **Ritta Buyaki**
 - Github: [@Buyaki01](https://github.com/Buyaki01)
