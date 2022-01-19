@@ -1,18 +1,8 @@
+import { useSelector } from 'react-redux';
 import BookItem from './BookItem';
 
 const BooksList = () => {
-  const booksArray = [
-    {
-      title: 'The Hunger Games',
-      id: 0,
-      author: 'Suzanne Collins',
-    },
-    {
-      title: 'The Awesomeness',
-      id: 1,
-      author: 'Erick Collins',
-    },
-  ];
+  const booksArray = useSelector((state) => state.booksReducer);
   return (
     <section>
       {booksArray.map((book) => (

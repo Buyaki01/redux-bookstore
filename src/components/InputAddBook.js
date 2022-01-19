@@ -12,12 +12,11 @@ const InputAddBook = () => {
     e.preventDefault();
     if (title === '' || author === '') return;
     const newBook = {
-      id: uuidv4,
+      id: uuidv4(),
       title,
       author,
     };
 
-    // dispatch an action and pass it the newBook object (your action's payload)
     dispatch(addBook(newBook));
     setTitle('');
     setAuthor('');
@@ -31,16 +30,14 @@ const InputAddBook = () => {
           <input
             className="inputSec"
             type="text"
-            // name="titel"
             id="titel"
             placeholder="Book title..."
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
           <input
-            // className="inputSec"
+            className="inputAuthorSec"
             type="text"
-            // name="titel"
             id="titel"
             placeholder="Author"
             value={author}
