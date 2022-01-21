@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/Books';
+import { addBookToApi } from '../redux/books/Books';
 
 const InputAddBook = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const InputAddBook = () => {
       author,
     };
 
-    dispatch(addBook(newBook));
+    dispatch(addBookToApi(newBook));
     setTitle('');
     setAuthor('');
   };
@@ -51,6 +51,9 @@ const InputAddBook = () => {
             </option>
             <option value="Category">Action</option>
             <option value="Category">Adventure</option>
+            <option value="science">Science</option>
+            <option value="romance">Romance</option>
+            <option value="thriller">Thriller</option>
           </select>
         </label>
         <button onClick={submitBookToStore} type="submit" className="addBookBtn">
