@@ -6,20 +6,20 @@ import { addBookToApi } from '../redux/books/Books';
 const InputAddBook = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
   const submitBookToStore = (e) => {
     e.preventDefault();
-    if (title === '' || author === '') return;
+    if (title === '' || category === '') return;
     const newBook = {
       id: uuidv4(),
       title,
-      author,
+      category,
     };
 
     dispatch(addBookToApi(newBook));
     setTitle('');
-    setAuthor('');
+    setCategory('');
   };
 
   return (
@@ -35,17 +35,10 @@ const InputAddBook = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <input
-            className="inputAuthorSec"
-            type="text"
-            id="titel"
-            placeholder="Author"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-          />
         </label>
         <label htmlFor="book-category" className="bookCategorySec">
-          <select name="book-category" id="category" className="inputBookCategory">
+          <select name="book-category" id="category" className="inputBookCategory" onChange={(e) => setCategory(e.target.value)}>
+
             <option value="Category" hidden>
               Category
             </option>
@@ -54,6 +47,7 @@ const InputAddBook = () => {
             <option value="science">Science</option>
             <option value="romance">Romance</option>
             <option value="thriller">Thriller</option>
+            <option value="thriller">Religion</option>
           </select>
         </label>
         <button onClick={submitBookToStore} type="submit" className="addBookBtn">

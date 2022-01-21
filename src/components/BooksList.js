@@ -11,15 +11,10 @@ const BooksList = () => {
   }, [dispatch]);
   return (
     <section>
-      {booksArray.length ? (
-        booksArray.map((book) => (
-          <BookItem book={book} key={book.id} />
-        ))
-      ) : (
-        <h3 className="emptyInput">There is no books!</h3>
-      )}
+      {booksArray.map((book) => (
+        <BookItem key={book.id} book={book} />
+      ))}
     </section>
-
   );
 };
 

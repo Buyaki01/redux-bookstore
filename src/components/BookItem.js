@@ -3,28 +3,23 @@ import { useDispatch } from 'react-redux';
 import { removeBookFromApi } from '../redux/books/Books';
 
 const BookItem = (props) => {
-  const { book: { id, title, author } } = props;
+  const { book: { id, title, category } } = props;
   const dispatch = useDispatch();
   const removeBookFromStore = () => {
-    dispatch(removeBookFromApi({ id }));
+    dispatch(removeBookFromApi(id));
   };
 
   return (
     <div className="bookItemContainer">
       <div className="booksSection">
         <div>
-          <h3 className="bookItemCategory">Action</h3>
+          <h3 className="bookItemCategory">
+            {category}
+          </h3>
         </div>
         <h2>
-          {' '}
           {title}
-          {' '}
         </h2>
-        <h4 className="bookAuthor">
-          {' '}
-          {author}
-          {' '}
-        </h4>
         <div className="userBtn">
           <button type="button" className="commentsBtn">Comments</button>
           <button type="button" className="removeBtn" onClick={removeBookFromStore}>Remove</button>
@@ -52,7 +47,7 @@ BookItem.propTypes = {
   book: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
-    author: PropTypes.string,
+    category: PropTypes.string,
   }).isRequired,
 };
 
