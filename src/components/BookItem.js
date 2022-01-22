@@ -22,8 +22,14 @@ const BookItem = (props) => {
           {title}
         </h2>
         <div className="userBtn">
-          <button type="button" className="commentsBtn">Comments</button>
-          <button type="button" className="removeBtn" onClick={removeBookFromStore}>Remove</button>
+          <button type="button" className="commentsBtn">
+            Comments
+            <span className="straightStroke"> | </span>
+          </button>
+          <button type="button" className="removeBtn" onClick={removeBookFromStore}>
+            Remove
+            <span className="straightStroke"> | </span>
+          </button>
           <button type="button" className="editBtn">Edit</button>
         </div>
       </div>

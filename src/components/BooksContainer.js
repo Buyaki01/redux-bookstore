@@ -6,7 +6,7 @@ import InputAddBook from './InputAddBook';
 import Categories from '../redux/categories/Categories';
 
 const BooksContainer = () => (
-  <>
+  <div className="topContainer">
     <Navbar />
     <Routes>
       <Route
@@ -24,6 +24,6 @@ const BooksContainer = () => (
       <Route path="/categories" element={<Categories />} />
 
     </Routes>
-  </>
+  </div>
 );
 export default BooksContainer;
