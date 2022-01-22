@@ -37,21 +37,21 @@ const InputAddBook = () => {
           />
         </label>
         <label htmlFor="book-category" className="bookCategorySec">
-          <select name="book-category" id="category" className="inputBookCategory" onChange={(e) => setCategory(e.target.value)}>
+          <select name="book-category" id="category" className="inputBookCategory" value={category} onChange={(e) => setCategory(e.target.value)}>
 
             <option value="Category" hidden>
               Category
             </option>
-            <option value="Category">Action</option>
-            <option value="Category">Adventure</option>
-            <option value="science">Science</option>
-            <option value="romance">Romance</option>
-            <option value="thriller">Thriller</option>
-            <option value="thriller">Religion</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Science">Science</option>
+            <option value="Romance">Romance</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Religion">Religion</option>
           </select>
         </label>
         <button onClick={submitBookToStore} type="submit" className="addBookBtn">
-          <span> ADD BOOK </span>
+          ADD BOOK
         </button>
       </form>
     </section>

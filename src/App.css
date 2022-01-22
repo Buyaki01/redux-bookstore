@@ -1,35 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Roboto Slab'");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-color: rgb(232, 233, 237);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'RobotoSlab', sans-serif;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .logo {
-  color: rgb(2, 144, 255);
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
   margin-left: 30px;
 }
 
 .navContent {
   display: flex;
   border: 2px solid rgb(206, 199, 199);
-  padding: 20px;
+  padding: 15px;
 }
 
 .navBarLinks {
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-top: 5px;
   list-style-type: none;
   display: flex;
   gap: 10px;
 }
 
 .listItem {
-  color: rgb(58, 58, 58);
+  margin-left: 20px;
   text-decoration: none;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: var(--black-two);
 }
 
 .userIcon {
@@ -53,38 +69,96 @@
 }
 
 .userBtn {
-  margin-top: 10px;
+  margin-top: 5px;
+}
+
+.bookItemCategory {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--black-two);
+}
+
+.bookItemTitle {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: var(--black-two);
 }
 
 .commentsBtn,
 .removeBtn,
 .editBtn {
-  margin-right: 10px;
-  color: rgb(2, 144, 255);
+  margin-right: 7px;
   padding: 10px;
-}
-
-.bookItemCategory {
-  color: rgb(87, 87, 87);
+  border: none;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
 }
 
 .currentChapter {
-  color: rgb(198, 198, 198);
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  color: var(--black-two);
 }
 
 .chapter {
   margin-top: 15px;
-  color: rgb(87, 87, 87);
+  font-weight: 300;
+  color: var(--black-two);
+}
+
+.addBookBtn {
+  background-color: #0290ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.progressContainer {
+  display: flex;
+}
+
+.progressBar {
+  width: 80px;
+}
+
+.progressPercentageSection {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.progressPercentage {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: var(--black-two);
+}
+
+.progressCompleted {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: var(--black-two);
 }
 
 .updateProgressBtn {
   margin-top: 15px;
-}
-
-.updateProgressBtn,
-.addBookBtn {
+  font-family: 'RobotoSlab', sans-serif;
+  width: 200px;
+  background-color: #0290ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   padding: 10px;
-  color: rgb(2, 144, 255);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
 }
 
 .newBookSec {
@@ -104,12 +178,14 @@
 
 .inputSec {
   padding: 10px;
+  border-radius: 5px;
 }
 
 .inputBookCategory {
   padding: 13px;
   padding-right: 60px;
   padding-left: 60px;
+  border-radius: 5px;
 }
 
 .categoriesContainer {
